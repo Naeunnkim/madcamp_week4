@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - arrow
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,10 @@ TagManager:
     locked: 0
   - name: unit
     uniqueID: 955911517
+    locked: 0
+  - name: unithealthbehind
+    uniqueID: 4200485861
+    locked: 0
+  - name: unithealthfront
+    uniqueID: 2242841537
     locked: 0
