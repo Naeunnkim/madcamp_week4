@@ -31,7 +31,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (!isCollidingAlly) { 
+        if (!isCollidingAlly)
+        {
             Vector3 newPosition = initialPosition + Vector3.up * Mathf.Sin(Time.time * movementSpeed) * movementRange;
             transform.position = newPosition;
         }
@@ -80,7 +81,7 @@ public class Enemy : MonoBehaviour
         }
         else if (other.CompareTag("bullet"))
         {
-            float bulletDamage = other.gameObject.GetComponent<FireController>().damage;
+            float bulletDamage = other.gameObject.GetComponent<BulletController>().damage;
             TakeDamage(bulletDamage);
         }
         else if (other.CompareTag("ally") && !isCollidingAlly)
@@ -92,7 +93,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("ally"))
+        if (other.CompareTag("ally") && !isCollidingAlly)
         {
             isCollidingAlly = false;
             if (damageOverTime != null)

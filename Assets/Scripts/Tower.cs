@@ -20,9 +20,5 @@ public class Tower : MonoBehaviour
 
             // TODO: Deduct gold
         }
-        else
-        {
-            Destroy(tower);
-        }
     }
 }

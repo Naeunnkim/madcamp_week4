@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemymovementtest : MonoBehaviour
 {
@@ -9,7 +11,33 @@ public class enemymovementtest : MonoBehaviour
     private int currentIndex =0;
     private enemymovement enemyMovement;
     public float currentHealth;
+    public float maxHealth = 100f;
+    public Slider healthBar;
+    public Vector3 healthBarOffset = new Vector3(0f, 0.5f, 0f);
+    private Coroutine damageOverTime;
+    private float damageInterval = 1f;
+    private bool isCollidingAlly = false;
+    public float arrowDamage = 20f;
+    public float bulletDamage = 30f;
+    private Coroutine state;
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar = GetComponentInChildren<Slider>();
+        if (healthBar != null)
+        {
+            healthBar.transform.position = transform.position + healthBarOffset;
+        }
+    }
+
+    private void Update()
+    {
+        if (healthBar != null)
+        {
+            healthBar.transform.position = transform.position + healthBarOffset;
+        }
+    }
     public void Setup(Transform[] wayPoints) {
         enemyMovement = GetComponent<enemymovement>();
 
@@ -31,8 +59,9 @@ public class enemymovementtest : MonoBehaviour
         while (true) {
             //적 오브젝트 회전
             //transform.Rotate(Vector3.forward*10);
+            
 
-            if(Vector3.Distance(transform.position, wayPoints[currentIndex].position)<0.02f* enemyMovement.MoveSpeed) {
+            if(!isCollidingAlly && Vector3.Distance(transform.position, wayPoints[currentIndex].position)<0.02f* enemyMovement.MoveSpeed) {
                 NextMoveTo();
             }
 
@@ -62,5 +91,75 @@ public class enemymovementtest : MonoBehaviour
     public bool IsAlive()
     {
         return currentHealth > 0f;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0f)
+        {
+            currentHealth = 0f;
+            Die();
+        }
+        UpdateHealthBar();
+    }
+
+    void Die()
+    {
+        Debug.Log("Enemy defeated!");
+        ArrowController[] arrows = FindObjectsOfType<ArrowController>();
+        foreach (ArrowController arrow in arrows)
+        {
+            arrow.StopMoving();
+        }
+
+        Destroy(gameObject);
+    }
+
+    void UpdateHealthBar()
+    {
+        float healthPercentage = currentHealth / maxHealth;
+        healthBar.value = healthPercentage;
+        healthBar.transform.position = transform.position + healthBarOffset;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("arrow"))
+        {
+            TakeDamage(arrowDamage);
+        }
+        else if (other.CompareTag("bullet"))
+        {
+            TakeDamage(bulletDamage);
+        }
+        else if (other.CompareTag("ally") && !isCollidingAlly)
+        {
+            isCollidingAlly = true;
+            enemyMovement.StopMoving();
+            damageOverTime = StartCoroutine(ApplyDamage(10f));
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("ally"))
+        {
+            isCollidingAlly = false;
+            if (damageOverTime != null)
+            {
+                StopCoroutine(damageOverTime);
+            }
+            enemyMovement.ResumeMoving();
+        }
+    }
+
+    private IEnumerator ApplyDamage(float damage)
+    {
+        while (IsAlive() && isCollidingAlly)
+        {
+            TakeDamage(damage);
+            yield return new WaitForSeconds(damageInterval);
+        }
     }
 }

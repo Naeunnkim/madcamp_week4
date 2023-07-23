@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -218,6 +218,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -743,11 +762,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -794,6 +814,15 @@ PrefabInstance:
       value: buildingPlaceGrass (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1683161763}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1683161762}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &194709901
 GameObject:
@@ -884,6 +913,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -935,6 +965,15 @@ PrefabInstance:
       value: buildingPlaceGrass (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207283216}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207283213}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &207283212 stripped
 GameObject:
@@ -953,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!61 &207283216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -964,6 +1003,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -995,6 +1053,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1023,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!1 &210934605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1363,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -1337,6 +1415,9 @@ PrefabInstance:
       value: Waypoint (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &303561446 stripped
 Transform:
@@ -1383,9 +1464,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1432,6 +1521,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -1483,6 +1573,9 @@ PrefabInstance:
       value: Waypoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &345781385 stripped
 Transform:
@@ -1499,6 +1592,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -1550,6 +1644,12 @@ PrefabInstance:
       value: Waypoint (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1291787668}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &358402293 stripped
 Transform:
@@ -1645,6 +1745,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3022739683949277739, guid: 773be249767a99148aaeac0411ed6275, type: 3}
@@ -1653,7 +1754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6893854148202141551, guid: 773be249767a99148aaeac0411ed6275, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6893854148202141551, guid: 773be249767a99148aaeac0411ed6275, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1696,12 +1797,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 773be249767a99148aaeac0411ed6275, type: 3}
 --- !u!1001 &433595298
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -1753,6 +1858,12 @@ PrefabInstance:
       value: Waypoint (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 433595300}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &433595299 stripped
 Transform:
@@ -1769,6 +1880,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1874,6 +2004,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -1925,6 +2056,15 @@ PrefabInstance:
       value: buildingPlaceGrass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1966757039}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1966757040}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &470249297
 GameObject:
@@ -2104,6 +2244,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3022739683949277739, guid: 773be249767a99148aaeac0411ed6275, type: 3}
@@ -2112,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6893854148202141551, guid: 773be249767a99148aaeac0411ed6275, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6893854148202141551, guid: 773be249767a99148aaeac0411ed6275, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2155,6 +2296,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 773be249767a99148aaeac0411ed6275, type: 3}
 --- !u!1 &596015293
 GameObject:
@@ -2843,6 +2987,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2871,7 +3034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 4195915888566828196, guid: ab3624df0b1e25c4d9005227803a379e, type: 3}
 --- !u!1 &749221482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,6 +3298,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3334,6 +3516,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3362,7 +3563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!1 &856823687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,7 +3678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1087142861974899406, guid: 541fd9260c81e4389995239a9915be04, type: 3}
-  spawnTime: 0.5
+  spawnTime: 3
   wayPoints:
   - {fileID: 433595299}
   - {fileID: 1789943145}
@@ -3850,6 +4051,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -3901,6 +4103,12 @@ PrefabInstance:
       value: Waypoint (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 951176663}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &951176662 stripped
 Transform:
@@ -3917,6 +4125,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4022,6 +4249,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -4073,6 +4301,15 @@ PrefabInstance:
       value: buildingPlaceGrass (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 727994337}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 727994338}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &968719896
 GameObject:
@@ -4380,7 +4617,7 @@ Transform:
   - {fileID: 303561446}
   - {fileID: 345781385}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037329828
 GameObject:
@@ -4897,6 +5134,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5002,11 +5258,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5053,6 +5310,15 @@ PrefabInstance:
       value: buildingPlaceGrass (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1171698216}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1171698215}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &1171698214 stripped
 GameObject:
@@ -5071,7 +5337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!61 &1171698216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5082,6 +5348,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5439,6 +5724,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -5490,6 +5776,12 @@ PrefabInstance:
       value: Waypoint (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1213705401}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &1213705399 stripped
 Transform:
@@ -5511,6 +5803,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5626,6 +5937,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5647,6 +5977,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -5698,6 +6029,9 @@ PrefabInstance:
       value: Waypoint (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &1300007047 stripped
 Transform:
@@ -5709,6 +6043,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -5760,6 +6095,15 @@ PrefabInstance:
       value: buildingPlaceGrass (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1948573031}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1948573032}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &1383615328
 GameObject:
@@ -6464,6 +6808,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -6569,6 +6932,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -6620,6 +6984,12 @@ PrefabInstance:
       value: Waypoint (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1782849949}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &1549397076 stripped
 Transform:
@@ -6721,6 +7091,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7258,7 +7647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 2968335869425579712, guid: 9f59ed84a525f0b409fefcecc2c1379d, type: 3}
 --- !u!61 &1683161763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7269,6 +7658,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7626,6 +8034,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -7677,6 +8086,15 @@ PrefabInstance:
       value: buildingPlaceGrass (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207414736}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207414737}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &1764597892
 GameObject:
@@ -7767,6 +8185,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -7818,6 +8237,15 @@ PrefabInstance:
       value: buildingPlaceGrass (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037999662}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037999663}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &1782849948 stripped
 GameObject:
@@ -7834,6 +8262,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7855,6 +8302,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -7906,6 +8354,12 @@ PrefabInstance:
       value: Waypoint (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789943146}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &1789943145 stripped
 Transform:
@@ -7922,6 +8376,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8117,6 +8590,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8222,6 +8714,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211469576182945488, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -8273,6 +8766,15 @@ PrefabInstance:
       value: buildingPlaceGrass (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828742220}
+    - targetCorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828742221}
   m_SourcePrefab: {fileID: 100100000, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
 --- !u!1 &1933501036
 GameObject:
@@ -8369,6 +8871,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8400,6 +8921,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8428,7 +8968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!1 &1966757036 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8021111519749763743, guid: 29eb66b5b31b1c34fabe8a7b01f01a48, type: 3}
@@ -8444,6 +8984,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8472,12 +9031,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!1001 &1976070868
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -8529,6 +9089,12 @@ PrefabInstance:
       value: Waypoint (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793263584734455398, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1976070870}
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &1976070869 stripped
 Transform:
@@ -8545,6 +9111,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8902,6 +9487,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1016657504}
     m_Modifications:
     - target: {fileID: 2358268852904504218, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
@@ -8953,6 +9539,9 @@ PrefabInstance:
       value: Waypoint (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e902fa07a43f4cc4b03aab019204dc5, type: 3}
 --- !u!4 &2010309848 stripped
 Transform:
@@ -9058,6 +9647,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9086,7 +9694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5289913632780424636, guid: 6649a9ad54ecb254c89d2c0c9942f45b, type: 3}
+  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
 --- !u!1 &2041606883
 GameObject:
   m_ObjectHideFlags: 0

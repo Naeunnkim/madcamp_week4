@@ -9,6 +9,7 @@ public class BulletShoot : MonoBehaviour
     public float shootCool = 0.5f;
 
     private bool canShoot = true;
+    private GameObject nearestEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -23,22 +24,32 @@ public class BulletShoot : MonoBehaviour
         {
             if (col.CompareTag("Enemy"))
             {
-                Enemy enemy = col.gameObject.GetComponent<Enemy>();
+                enemymovementtest enemy = col.gameObject.GetComponent<enemymovementtest>();
                 if (enemy != null && enemy.IsAlive() && canShoot)
                 {
-                    ShootAtEnemy(col.gameObject);
+                    if (nearestEnemy == null || Vector2.Distance(enemy.transform.position, (Vector2)transform.position) < Vector2.Distance(nearestEnemy.transform.position, (Vector2)transform.position))
+                    {
+                        nearestEnemy = enemy.gameObject;
+                    }
                 }
             }
+        }
+        if (nearestEnemy != null && canShoot)
+        {
+            ShootAtEnemy(nearestEnemy);
         }
     }
 
     void ShootAtEnemy(GameObject enemy)
     {
-        GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
-        FireController mover = bullet.GetComponent<FireController>();
-        mover.SetTarget(enemy);
-        canShoot = false;
-        StartCoroutine(ResetShootCooldown());
+        if (Vector2.Distance(enemy.transform.position, (Vector2)transform.position) <= distanceThreshold)
+        {
+            GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+            BulletController mover = bullet.GetComponent<BulletController>();
+            mover.SetTarget(enemy);
+            canShoot = false;
+            StartCoroutine(ResetShootCooldown());
+        }
     }
     IEnumerator ResetShootCooldown()
     {

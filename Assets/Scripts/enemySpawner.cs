@@ -8,7 +8,7 @@ public class enemySpawner : MonoBehaviour
     private GameObject enemyPrefab; //적 프리팹
 
     [SerializeField]
-    private float spawnTime=3; //적 생성 주기
+    private float spawnTime=3f; //적 생성 주기
 
     [SerializeField]
     private Transform[] wayPoints;

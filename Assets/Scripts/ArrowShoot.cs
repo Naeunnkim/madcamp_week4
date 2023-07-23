@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ArrowShoot : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ArrowShoot : MonoBehaviour
     public float shootCool = 0.5f;
 
     private bool canShoot = true;
+    private GameObject nearestEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -23,22 +25,32 @@ public class ArrowShoot : MonoBehaviour
         {
             if (col.CompareTag("Enemy"))
             {
-                Enemy enemy = col.gameObject.GetComponent<Enemy>();
+                enemymovementtest enemy = col.gameObject.GetComponent<enemymovementtest>();
                 if (enemy != null && enemy.IsAlive() && canShoot)
                 {
-                    ShootAtEnemy(col.gameObject);
+                    if (nearestEnemy == null || Vector2.Distance(enemy.transform.position, (Vector2)transform.position) < Vector2.Distance(nearestEnemy.transform.position, (Vector2)transform.position))
+                    {
+                        nearestEnemy = enemy.gameObject;
+                    }
                 }
             }
+        }
+        if (nearestEnemy != null && canShoot)
+        {
+            ShootAtEnemy(nearestEnemy);
         }
     }
 
     void ShootAtEnemy(GameObject enemy)
     {
-        GameObject arrow = Instantiate(ArrowPrefab, transform.position, Quaternion.identity);
-        ArrowController mover = arrow.GetComponent<ArrowController>();
-        mover.SetTarget(enemy);
-        canShoot = false;
-        StartCoroutine(ResetShootCooldown());
+        if (Vector2.Distance(enemy.transform.position, (Vector2)transform.position) <= distanceThreshold)
+        {
+            GameObject arrow = Instantiate(ArrowPrefab, transform.position, Quaternion.identity);
+            ArrowController mover = arrow.GetComponent<ArrowController>();
+            mover.SetTarget(enemy);
+            canShoot = false;
+            StartCoroutine(ResetShootCooldown());
+        }
     }
     IEnumerator ResetShootCooldown()
     {

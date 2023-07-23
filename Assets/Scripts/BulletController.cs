@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class FireController : MonoBehaviour
+public class BulletController : MonoBehaviour
 {
     private GameObject target;
     private Vector3 targetPosition;
@@ -36,7 +36,7 @@ public class FireController : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
-            if (!target.GetComponent<Enemy>().IsAlive() || Vector2.Distance(transform.position, target.transform.position) < 0.1f)
+            if (!target.GetComponent<enemymovementtest>().IsAlive() || Vector2.Distance(transform.position, target.transform.position) < 0.1f)
             {
                 isMoving = true;
             }
@@ -53,7 +53,7 @@ public class FireController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            Debug.Log("Fire collided with an enemy!");
+            Debug.Log("Bullet collided with an enemy!");
         }
     }
     public void StopMoving()

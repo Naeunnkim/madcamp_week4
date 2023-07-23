@@ -262,9 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52441b2c00ab1e4f9db62a79da9eda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   health: {fileID: 5357597171138040412}
+  isCollidingEnemy: 0
   maxHealth: 150
+  healingAmount: 10
   enemyDamage: 10
   healthOffset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1778289047002234572

@@ -10,8 +10,7 @@ public class Unit : MonoBehaviour
     public float speed = 1f;
     private Rect boundary;
     public Slider health;
-    private bool isCollidingEnemy;
-    private bool shouldMove;
+    public bool isCollidingEnemy;
     public float maxHealth = 150f;
     private float currentHealth;
 
@@ -23,6 +22,7 @@ public class Unit : MonoBehaviour
     public float enemyDamage = 10f;
 
     public Vector3 healthOffset = new Vector3(0f, 0.5f, 0f);
+    private List<enemymovementtest> collidingEnemies = new List<enemymovementtest>();
 
     private void Start()
     {
@@ -109,7 +109,7 @@ public class Unit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !isCollidingEnemy)
         {
             isCollidingEnemy = true;
             enemy = other.gameObject;
