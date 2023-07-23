@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class ArrowShoot : MonoBehaviour
 {
     public GameObject ArrowPrefab;
     public float distanceThreshold = 5f;

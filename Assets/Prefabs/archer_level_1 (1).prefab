@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowPrefab: {fileID: 2636974429936480951, guid: 610c1633135eb4d48a44c185453590bd, type: 3}
   distanceThreshold: 5
-  shootCool: 0.5
+  shootCool: 1
 --- !u!1 &8615391774742353210
 GameObject:
   m_ObjectHideFlags: 0
