@@ -6,7 +6,7 @@ using System.Linq;
 public class ArrowShoot : MonoBehaviour
 {
     public GameObject ArrowPrefab;
-    public float distanceThreshold = 5f;
+    private float distanceThreshold;
     public float shootCool = 0.5f;
 
     private bool canShoot = true;
@@ -15,6 +15,7 @@ public class ArrowShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        distanceThreshold = GetComponentInParent<AttackRange>().distanceThreshold;
     }
 
     // Update is called once per frame

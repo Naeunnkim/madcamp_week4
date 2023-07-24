@@ -3034,7 +3034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 4195915888566828196, guid: ab3624df0b1e25c4d9005227803a379e, type: 3}
+  towerPrefab: {fileID: 4522390100953520359, guid: e727ff2069ef1ae4f921f0ea7c42d709, type: 3}
 --- !u!1 &749221482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,7 +3678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1087142861974899406, guid: 541fd9260c81e4389995239a9915be04, type: 3}
-  spawnTime: 3
+  spawnTime: 2
   wayPoints:
   - {fileID: 433595299}
   - {fileID: 1789943145}
@@ -7647,7 +7647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 2968335869425579712, guid: 9f59ed84a525f0b409fefcecc2c1379d, type: 3}
+  towerPrefab: {fileID: 5342848081198081074, guid: af01b0c7e7b6fbd4c8af42d4e2a8a43b, type: 3}
 --- !u!61 &1683161763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9031,7 +9031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d3e7b6c246b74fab7fd0759824c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
+  towerPrefab: {fileID: 2042491820675517351, guid: 389a3eed4af7a2949a8011cb1135e39d, type: 3}
 --- !u!1001 &1976070868
 PrefabInstance:
   m_ObjectHideFlags: 0

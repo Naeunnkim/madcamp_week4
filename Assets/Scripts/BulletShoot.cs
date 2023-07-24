@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletShoot : MonoBehaviour
 {
     public GameObject BulletPrefab;
-    public float distanceThreshold = 5f;
+    private float distanceThreshold;
     public float shootCool = 0.5f;
 
     private bool canShoot = true;
@@ -14,6 +14,7 @@ public class BulletShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        distanceThreshold = GetComponentInParent<AttackRange>().distanceThreshold;
     }
 
     // Update is called once per frame

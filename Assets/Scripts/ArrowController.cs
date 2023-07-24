@@ -45,12 +45,12 @@ public class ArrowController : MonoBehaviour
             angleDegrees += 270f;
 
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleDegrees));
-            if (!target.GetComponent<Enemy>().IsAlive() || Vector2.Distance(transform.position, target.transform.position) < 0.1f)
+            if (!target.GetComponent<enemymovementtest>().IsAlive() || Vector2.Distance(transform.position, target.transform.position) < 0.1f)
             {
                 isMoving = true;
             }
         }
-        else if (isMoving) // If not following the enemy, continue moving towards the target position
+        else if (isMoving)
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);

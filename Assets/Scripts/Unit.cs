@@ -10,7 +10,8 @@ public class Unit : MonoBehaviour
     public float speed = 1f;
     private Rect boundary;
     public Slider health;
-    public bool isCollidingEnemy;
+    private bool isCollidingEnemy;
+    public bool passEnemy = false;
     public float maxHealth = 150f;
     private float currentHealth;
 
@@ -21,14 +22,16 @@ public class Unit : MonoBehaviour
     private float Interval = 1f;
     public float enemyDamage = 10f;
 
+    private Vector3 initialposition;
     public Vector3 healthOffset = new Vector3(0f, 0.5f, 0f);
     private List<enemymovementtest> collidingEnemies = new List<enemymovementtest>();
 
     private void Start()
     {
-        boundary = new Rect(transform.position.x - 3, transform.position.y - 3, 6, 6);
+        boundary = new Rect(transform.position.x - 2, transform.position.y - 2, 4, 4);
         isCollidingEnemy = false;
         currentHealth = maxHealth;
+        initialposition = transform.position;
         health = GetComponentInChildren<Slider>();
         if (health != null)
         {
@@ -38,15 +41,9 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
-        if (!isCollidingEnemy) { 
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            GameObject closestEnemy = enemies.FirstOrDefault(e => boundary.Contains(e.transform.position));
-
-            if (closestEnemy != null && closestEnemy != enemy)
-            {
-                enemy = closestEnemy;
-            }
-            if (enemy != null)
+        if (!isCollidingEnemy)
+        {
+            if (enemy != null && boundary.Contains(enemy.transform.position))
             {
                 Vector2 direction = (enemy.transform.position - transform.position).normalized;
                 transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
@@ -57,8 +54,31 @@ public class Unit : MonoBehaviour
                 {
                     healingCoroutine = StartCoroutine(HealOverTime());
                 }
+                if (collidingEnemies.Count == 0)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, initialposition, speed * Time.deltaTime);
+                }
             }
-         }
+            if (!boundary.Contains(transform.position))
+            {
+                transform.position = initialposition;
+                enemy = null;
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isCollidingEnemy)
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject closestEnemy = enemies.FirstOrDefault(e => boundary.Contains(e.transform.position));
+
+            if (closestEnemy != null && closestEnemy != enemy)
+            {
+                enemy = closestEnemy;
+            }
+        }
     }
 
     private IEnumerator HealOverTime()
@@ -112,7 +132,18 @@ public class Unit : MonoBehaviour
         if (other.CompareTag("Enemy") && !isCollidingEnemy)
         {
             isCollidingEnemy = true;
+            collidingEnemies.Add(other.GetComponent<enemymovementtest>());
             enemy = other.gameObject;
+            if (healingCoroutine != null)
+            {
+                StopCoroutine(healingCoroutine);
+                healingCoroutine = null;
+            }
+            if (attackingCoroutine != null)
+            {
+                StopCoroutine(attackingCoroutine);
+            }
+
             attackingCoroutine = StartCoroutine(ApplyDamage(enemyDamage));
         }
     }
@@ -127,13 +158,18 @@ public class Unit : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && isCollidingEnemy)
         {
-            isCollidingEnemy = false;
-            if (attackingCoroutine != null)
+            collidingEnemies.Remove(other.GetComponent<enemymovementtest>());
+            if (collidingEnemies.Count == 0)
             {
-                StopCoroutine(attackingCoroutine);
-                attackingCoroutine = null;
+                isCollidingEnemy = false;
+                if (attackingCoroutine != null)
+                {
+                    StopCoroutine(attackingCoroutine);
+                    attackingCoroutine = null;
+                    passEnemy = false;
+                }
             }
         }
     }

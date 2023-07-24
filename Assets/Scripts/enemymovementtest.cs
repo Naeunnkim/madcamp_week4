@@ -19,7 +19,8 @@ public class enemymovementtest : MonoBehaviour
     private bool isCollidingAlly = false;
     public float arrowDamage = 20f;
     public float bulletDamage = 30f;
-    private Coroutine state;
+    private Unit allyUnit;
+    private List <Unit> collidingAllies = new List <Unit>();
 
     private void Start()
     {
@@ -112,7 +113,6 @@ public class enemymovementtest : MonoBehaviour
         {
             arrow.StopMoving();
         }
-
         Destroy(gameObject);
     }
 
@@ -133,9 +133,12 @@ public class enemymovementtest : MonoBehaviour
         {
             TakeDamage(bulletDamage);
         }
-        else if (other.CompareTag("ally") && !isCollidingAlly)
+        else if (other.CompareTag("ally") && !isCollidingAlly && !other.GetComponent<Unit>().passEnemy)
         {
+            allyUnit = other.GetComponent<Unit>();
+            allyUnit.passEnemy = true;
             isCollidingAlly = true;
+            collidingAllies.Add(allyUnit);
             enemyMovement.StopMoving();
             damageOverTime = StartCoroutine(ApplyDamage(10f));
         }
@@ -145,12 +148,19 @@ public class enemymovementtest : MonoBehaviour
     {
         if (other.CompareTag("ally"))
         {
-            isCollidingAlly = false;
-            if (damageOverTime != null)
+            Unit exitedAlly = other.GetComponent<Unit>();
+            if (collidingAllies.Contains(exitedAlly))
             {
-                StopCoroutine(damageOverTime);
+                collidingAllies.Remove(exitedAlly);
             }
-            enemyMovement.ResumeMoving();
+            if (collidingAllies.Count == 0) {
+                isCollidingAlly = false;
+                if (damageOverTime != null)
+                {
+                    StopCoroutine(damageOverTime);
+                }
+                enemyMovement.ResumeMoving();
+            }
         }
     }
 
@@ -161,5 +171,6 @@ public class enemymovementtest : MonoBehaviour
             TakeDamage(damage);
             yield return new WaitForSeconds(damageInterval);
         }
+        isCollidingAlly = false;
     }
 }

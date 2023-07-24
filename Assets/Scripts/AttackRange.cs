@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackRange : MonoBehaviour
 {
     public float distanceThreshold = 5f;
-    private bool showAttackRange = false;
+    private bool isVisible = false;
+    public GameObject circleObject;
 
-    private void OnDrawGizmosSelected()
+    private void Start()
     {
-        if (showAttackRange)
-        {
-            // Set the color for the transparent circle (e.g., red with 50% transparency)
-            Gizmos.color = new Color(1f, 0f, 0f, 0.5f);
-
-            // Draw the transparent circle at the parent's position with the specified attack range
-            Gizmos.DrawWireSphere(transform.position, distanceThreshold);
-        }
+        circleObject.SetActive(false);
+        SetCircleRadius(distanceThreshold);
+    }
+    void OnMouseDown()
+    {
+        isVisible = !isVisible;
+        circleObject.SetActive(isVisible);
     }
 
-    private void OnMouseDown()
+    public void SetCircleRadius(float radius)
     {
-        showAttackRange = !showAttackRange;
+        circleObject.transform.localScale = new Vector3(radius * 4f, radius * 2f, 0f);
     }
 }
