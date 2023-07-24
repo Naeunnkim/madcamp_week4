@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1736477899
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f607e217c5863f146a5acea8ff67104c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -382,14 +382,14 @@ Transform:
   m_GameObject: {fileID: 5239954494742701902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0651588, y: 1.5120974, z: 0}
-  m_LocalScale: {x: 1.3384073, y: 1.3384073, z: 1.3384073}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3384073}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1342865644761421494}
   - {fileID: 4198758686275570766}
   - {fileID: 8150421596747179318}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1125005133455302227
 SpriteRenderer:
@@ -531,6 +531,7 @@ MonoBehaviour:
   health: {fileID: 2340802102901505128}
   passEnemy: 0
   maxHealth: 150
+  sword: {fileID: 7546291795562576627}
   healingAmount: 15
   enemyDamage: 10
   healthOffset: {x: 0, y: 0.5, z: 0}
@@ -659,7 +660,7 @@ GameObject:
   - component: {fileID: 2396607925189353983}
   m_Layer: 0
   m_Name: sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +719,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1736477899
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d77afeb4830de4743b9f230f8cbe687f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

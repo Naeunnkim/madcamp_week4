@@ -14,13 +14,18 @@ public class Unit : MonoBehaviour
     public bool passEnemy = false;
     public float maxHealth = 150f;
     private float currentHealth;
+    public GameObject sword;
+    private Transform swordTransform;
 
 
     private Coroutine attackingCoroutine;
     private Coroutine healingCoroutine;
+    private Coroutine rotateCoroutine;
     public float healingAmount = 10f;
     private float Interval = 1f;
     public float enemyDamage = 10f;
+    private float rotationAngle;
+    private float rotationSpeed;
 
     private Vector3 initialposition;
     public Vector3 healthOffset = new Vector3(0f, 0.5f, 0f);
@@ -32,6 +37,9 @@ public class Unit : MonoBehaviour
         isCollidingEnemy = false;
         currentHealth = maxHealth;
         initialposition = transform.position;
+        rotationAngle = 120f;
+        rotationSpeed = 120f;
+        swordTransform = sword.transform;
         health = GetComponentInChildren<Slider>();
         if (health != null)
         {
@@ -143,8 +151,13 @@ public class Unit : MonoBehaviour
             {
                 StopCoroutine(attackingCoroutine);
             }
+            if (rotateCoroutine != null)
+            {
+               StopCoroutine(rotateCoroutine);
+            }
 
             attackingCoroutine = StartCoroutine(ApplyDamage(enemyDamage));
+            rotateCoroutine = StartCoroutine(RotateTo(rotationAngle, rotationSpeed));
         }
     }
     private IEnumerator ApplyDamage(float damage)
@@ -156,6 +169,38 @@ public class Unit : MonoBehaviour
         }
     }
 
+    private IEnumerator RotateTo(float rotationAngle, float rotationSpeed)
+    {
+        float initialRotation = swordTransform.localRotation.eulerAngles.z;
+        float targetRotation = initialRotation + rotationAngle;
+        float currentRotation = initialRotation;
+        bool rotateForward = true;
+
+        while (isCollidingEnemy)
+        {
+            float step = rotationSpeed * Time.deltaTime;
+
+            if (rotateForward)
+            {
+                currentRotation = Mathf.MoveTowards(currentRotation, targetRotation, step);
+            }
+            else
+            {
+                currentRotation = Mathf.MoveTowards(currentRotation, initialRotation, step);
+            }
+
+            swordTransform.localRotation = Quaternion.Euler(0, 0, currentRotation);
+
+            if (Mathf.Abs(currentRotation - targetRotation) < 0.01f)
+            {
+                // Switch direction when the target rotation is reached
+                rotateForward = !rotateForward;
+            }
+
+            yield return null;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Enemy") && isCollidingEnemy)
@@ -164,11 +209,21 @@ public class Unit : MonoBehaviour
             if (collidingEnemies.Count == 0)
             {
                 isCollidingEnemy = false;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                if (rotateCoroutine != null)
+                {
+                    StopCoroutine(rotateCoroutine);
+                    rotateCoroutine = null;
+                }
                 if (attackingCoroutine != null)
                 {
                     StopCoroutine(attackingCoroutine);
                     attackingCoroutine = null;
                     passEnemy = false;
+                }
+                if (swordTransform != null)
+                {
+                    swordTransform.localRotation = Quaternion.Euler(0, 0, 0);
                 }
             }
         }

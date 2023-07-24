@@ -8,6 +8,7 @@ TagManager:
   - arrow
   - bullet
   - ally
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -53,6 +54,9 @@ TagManager:
     locked: 0
   - name: unit
     uniqueID: 955911517
+    locked: 0
+  - name: enemy
+    uniqueID: 2514981003
     locked: 0
   - name: tower
     uniqueID: 1071008929

@@ -436,5 +436,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec58dc9eb551a14fa2f0260cd4de64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 1.5
+  distanceThreshold: 2
   circleObject: {fileID: 5027269536842370268}

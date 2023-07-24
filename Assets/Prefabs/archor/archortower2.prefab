@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec58dc9eb551a14fa2f0260cd4de64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 1.75
+  distanceThreshold: 2.25
   circleObject: {fileID: 4478931199168616382}
 --- !u!61 &3266263482757648794
 BoxCollider2D:
