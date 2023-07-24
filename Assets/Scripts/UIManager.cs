@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = Camera.main.transform.position.y; // 카메라의 높이에 맞게 z 위치를 설정합니다.
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        towerScript.BuildTower(worldPosition);
+        //towerScript.BuildTower(worldPosition);
     }
 
     void Update() {
