@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject towerPrefab;
     private GameObject tower = null;
 
+    // public GameObject uiContainer1; //canvas1-build
+    // public GameObject uiContainer2; //canvas2-upgrade and sell
     public GameObject uiContainer;
     public Button archerButton;
     public Button barrackButton;
@@ -20,10 +22,10 @@ public class UIManager : MonoBehaviour
     void Start() {
         HideUI();
         archerButton.onClick.AddListener(OnArcherButtonClick);
-        // barrackButton.onClick.AddListener(OnBarrackButtonClick);
-        // wizardButton.onClick.AddListener(OnWizardButtonClick);
+        barrackButton.onClick.AddListener(OnBarrackButtonClick);
+        wizardButton.onClick.AddListener(OnWizardButtonClick);
 
-        towerScript = GetComponent<Tower>();
+        towerScript = FindObjectOfType<Tower>();
     }
 
     public void ShowUI() {
@@ -51,8 +53,27 @@ public class UIManager : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = Camera.main.transform.position.y; // 카메라의 높이에 맞게 z 위치를 설정합니다.
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        //towerScript.BuildTower(worldPosition);
+        towerScript.BuildTower(worldPosition);
     }
+
+    //tower build button click event handle
+    public void OnBarrackButtonClick() {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Camera.main.transform.position.y;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        // Build barrack tower here if needed
+        HideUI();
+    }
+
+    //tower build button click event handle
+    public void OnWizardButtonClick() {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Camera.main.transform.position.y;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        // Build wizard tower here if needed
+        HideUI();
+    }
+
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) // 왼쪽 마우스 클릭 시
@@ -63,7 +84,7 @@ public class UIManager : MonoBehaviour
                 return;
             }
 
-            HideUI();
+            //HideUI();
             
         }
     }
