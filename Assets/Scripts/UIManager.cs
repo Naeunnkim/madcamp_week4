@@ -6,74 +6,133 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject towerPrefab;
     private GameObject tower = null;
 
-    // public GameObject uiContainer1; //canvas1-build
-    // public GameObject uiContainer2; //canvas2-upgrade and sell
-    public GameObject uiContainer;
+    public GameObject archerTowerPrefab;
+    public GameObject barrackTowerPrefab;
+    public GameObject wizardTowerPrefab;
+
+    public GameObject uiContainer1; //canvas1-build tower
+    public GameObject uiContainer2; //canvas2-upgrade and sell
+
     public Button archerButton;
     public Button barrackButton;
     public Button wizardButton;
+
+    public Button upgradeButton;
+    public Button sellButton;
+
     public Tower towerScript;
 
-    private bool isUIVisible = false;
+    //gold test
+    //public Text goldText;
+
+    private bool isUIVisible1 = false; //canvas1
+    private bool isUIVisible2 = false; //canvas2
 
     void Start() {
-        HideUI();
+        HideUI(uiContainer1);
+        HideUI(uiContainer2);
+        //UpdateGoldText(GoldManager.Instance.gold);
+        //GoldManager.Instance.OnGoldChanged.AddListener(UpdateGoldText);
+
         archerButton.onClick.AddListener(OnArcherButtonClick);
         barrackButton.onClick.AddListener(OnBarrackButtonClick);
         wizardButton.onClick.AddListener(OnWizardButtonClick);
+        upgradeButton.onClick.AddListener(OnUpgradeButtonClick);
+        sellButton.onClick.AddListener(OnSellButtonClick);
 
         towerScript = FindObjectOfType<Tower>();
     }
 
-    public void ShowUI() {
+    public void ShowUI(GameObject uiContainer) {
         uiContainer.SetActive(true);
-        isUIVisible = true;
+
+        if(uiContainer==uiContainer1) {
+            isUIVisible1 = true;
+        }
+        else {
+            isUIVisible2 = true;
+        }
+        
     }
 
-    public void HideUI() {
+    public void HideUI(GameObject uiContainer) {
         uiContainer.SetActive(false);
-        isUIVisible = false;
+        if(uiContainer == uiContainer1) {
+            isUIVisible1 = false;
+        }
+        else {
+            isUIVisible2 = false;
+        }
+        
     }
 
     private IEnumerator HideUICoroutine()
     {
-        uiContainer.SetActive(true);
+        uiContainer1.SetActive(true);
+        uiContainer2.SetActive(true);
 
         yield return null;
 
         // UI를 숨깁니다.
-        uiContainer.SetActive(false);
-        isUIVisible = false;
+        uiContainer1.SetActive(false);
+        uiContainer2.SetActive(false);
+
+        isUIVisible1 = false;
+        isUIVisible2 = false;
     }
 
     //tower build button click event handle
     public void OnArcherButtonClick() {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Camera.main.transform.position.y; // 카메라의 높이에 맞게 z 위치를 설정합니다.
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        towerScript.BuildTower(worldPosition);
-        HideUI();
+        int cost = 60;
+
+        Vector3 towerPosition = towerScript.transform.position;
+            towerPosition.y += 0.9f;
+
+            towerScript.BuildTower(towerPosition, archerTowerPrefab);
+            HideUI(uiContainer1);
+
+        // if(GoldManager.Instance.SubtractGold(cost)) {
+            
+        // }
+
+        // else {
+        //     Debug.Log("not enough gold");
+        // }
+
+        
     }
 
     //tower build button click event handle
     public void OnBarrackButtonClick() {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Camera.main.transform.position.y;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        // Build barrack tower here if needed
-        HideUI();
+        Vector3 towerPosition = towerScript.transform.position;
+        towerPosition.y += 0.9f;
+
+        towerScript.BuildTower(towerPosition, barrackTowerPrefab);
+        HideUI(uiContainer1);
     }
 
     //tower build button click event handle
     public void OnWizardButtonClick() {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Camera.main.transform.position.y;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        // Build wizard tower here if needed
-        HideUI();
+        Vector3 towerPosition = towerScript.transform.position;
+        towerPosition.y += 0.9f;
+
+        towerScript.BuildTower(towerPosition, wizardTowerPrefab);
+        HideUI(uiContainer1);
+    }
+
+    public void OnUpgradeButtonClick() {
+        //upgrade tower
+        HideUI(uiContainer2);
+    }
+
+    public void OnSellButtonClick() {
+        //sell tower
+        if(towerScript != null) {
+            towerScript.DestroyTower();
+        }
+        HideUI(uiContainer2);
     }
 
 
@@ -81,13 +140,29 @@ public class UIManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // 왼쪽 마우스 클릭 시
         {
             // UI가 표시되어 있고, 캔버스를 클릭한 경우는 숨기지 않도록 합니다.
-            if (isUIVisible && EventSystem.current.IsPointerOverGameObject())
+            if (isUIVisible1 && EventSystem.current.IsPointerOverGameObject()
+            || isUIVisible2 && EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
 
-            //HideUI();
-            
+            // 레이캐스트를 사용하여 타워를 클릭하지 않도록 합니다.
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ignore Raycast"))
+                {
+                    return;
+                }
+            }
+
+            StartCoroutine(HideUICoroutine());
         }
     }
+
+    // public void UpdateGoldText(int newGoldValue) {
+    //     goldText.text = newGoldValue.ToString();
+    // }
 }
