@@ -10,7 +10,7 @@ public class Tower : MonoBehaviour
     public UIManager uiManager; //UIManager script 참조
 
     void Start() {
-        uiManager = GameObject.FindObjectOfType<UIManager>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     // Start is called before the first frame update
@@ -27,6 +27,8 @@ public class Tower : MonoBehaviour
 
             // TODO: Deduct gold
         }
+
+        
     }
 
     public void BuildTower(Vector3 position) {
@@ -34,5 +36,7 @@ public class Tower : MonoBehaviour
         newPosition.y += 0.9f;
 
         tower = Instantiate(towerPrefab, position, Quaternion.identity);
+
+        uiManager.HideUI();
     }
 }

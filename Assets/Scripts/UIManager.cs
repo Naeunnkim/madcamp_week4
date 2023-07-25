@@ -34,7 +34,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void HideUI() {
-        StartCoroutine(HideUICoroutine());
+        uiContainer.SetActive(false);
+        isUIVisible = false;
     }
 
     private IEnumerator HideUICoroutine()
@@ -54,6 +55,7 @@ public class UIManager : MonoBehaviour
         mousePosition.z = Camera.main.transform.position.y; // 카메라의 높이에 맞게 z 위치를 설정합니다.
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         towerScript.BuildTower(worldPosition);
+        HideUI();
     }
 
     //tower build button click event handle
