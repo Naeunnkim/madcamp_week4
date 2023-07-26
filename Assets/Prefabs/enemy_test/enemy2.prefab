@@ -522,9 +522,8 @@ MonoBehaviour:
   maxHealth: 150
   healthBar: {fileID: 379328924036509092}
   healthBarOffset: {x: 0, y: 0.5, z: 0}
-  arrowDamage: 20
-  bulletDamage: 30
-  BombDamage: 100
+  arrowDamage: 30
+  BombDamage: 150
   castleObject: {fileID: 6933042607634151132, guid: 6ce4d49e8473d0248b0b685b9d5c3542, type: 3}
 --- !u!114 &7032014989956297974
 MonoBehaviour:
@@ -538,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478446296fbb946769a75c4c22a355c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &7925719628628456205
 GameObject:

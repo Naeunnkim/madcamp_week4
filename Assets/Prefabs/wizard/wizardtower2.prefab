@@ -184,7 +184,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2829885321241179519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec58dc9eb551a14fa2f0260cd4de64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 2
+  distanceThreshold: 3
   circleObject: {fileID: 1597352559139693954}
 --- !u!1 &3023263495322428368
 GameObject:

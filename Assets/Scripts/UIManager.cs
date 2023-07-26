@@ -239,13 +239,13 @@ public class UIManager : MonoBehaviour
         switch (towerScript.type)
         {
             case TowerType.Archer:
-                sellValue = 30;
+                sellValue = 25;
                 break;
             case TowerType.Barrack:
-                sellValue = 35;
+                sellValue = 30;
                 break;
             case TowerType.Wizard:
-                sellValue = 40;
+                sellValue = 35;
                 break;
             default:
                 break;

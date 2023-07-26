@@ -23,12 +23,14 @@ public class Unit : MonoBehaviour
     private Coroutine rotateCoroutine;
     public float healingAmount = 10f;
     private float Interval = 1f;
-    public float enemyDamage = 10f;
+    public float enemyDamage = 15f;
     private float rotationAngle;
     private float rotationSpeed;
 
     private Vector3 initialposition;
     public Vector3 healthOffset = new Vector3(0f, 0.5f, 0f);
+    private Quaternion originalSwordRotation;
+    private Vector3 originalPivotOffset;
     private List<enemymovementtest> collidingEnemies = new List<enemymovementtest>();
 
     private void Start()
@@ -38,8 +40,9 @@ public class Unit : MonoBehaviour
         currentHealth = maxHealth;
         initialposition = transform.position;
         rotationAngle = 90f;
-        rotationSpeed = 180f;
+        rotationSpeed = 120f;
         swordTransform = sword.transform;
+        originalSwordRotation = swordTransform.localRotation;
         health = GetComponentInChildren<Slider>();
         if (health != null)
         {
@@ -155,7 +158,7 @@ public class Unit : MonoBehaviour
             {
                StopCoroutine(rotateCoroutine);
             }
-
+            originalPivotOffset = swordTransform.TransformPoint(GetLeftBottomVertex());
             attackingCoroutine = StartCoroutine(ApplyDamage(enemyDamage));
             rotateCoroutine = StartCoroutine(RotateTo(rotationAngle, rotationSpeed));
         }
@@ -171,6 +174,9 @@ public class Unit : MonoBehaviour
 
     private IEnumerator RotateTo(float rotationAngle, float rotationSpeed)
     {
+        Vector3 originalPivot = GetLeftBottomVertex(); // Store the original pivot point
+        Vector3 pivotOffset = swordTransform.TransformPoint(originalPivot); // Pivot offset from the sword's origin
+
         float initialRotation = swordTransform.localRotation.eulerAngles.z;
         float targetRotation = initialRotation + rotationAngle;
         float currentRotation = initialRotation;
@@ -189,7 +195,8 @@ public class Unit : MonoBehaviour
                 currentRotation = Mathf.MoveTowards(currentRotation, initialRotation, step);
             }
 
-            swordTransform.localRotation = Quaternion.Euler(0, 0, currentRotation);
+            // Move the pivot temporarily to the left bottom vertex
+            swordTransform.RotateAround(pivotOffset, Vector3.forward, currentRotation - swordTransform.localRotation.eulerAngles.z);
 
             if (Mathf.Abs(currentRotation - targetRotation) < 0.01f)
             {
@@ -203,6 +210,15 @@ public class Unit : MonoBehaviour
 
             yield return new WaitForFixedUpdate();
         }
+
+        // Reset the pivot back to its original position
+        swordTransform.RotateAround(pivotOffset, Vector3.forward, initialRotation - currentRotation);
+    }
+
+    private Vector3 GetLeftBottomVertex()
+    {
+        Vector3 size = swordTransform.GetComponent<Renderer>().bounds.size;
+        return new Vector3(-size.x / 3f, -size.y / 3f, 0f);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -227,7 +243,10 @@ public class Unit : MonoBehaviour
                 }
                 if (swordTransform != null)
                 {
-                    swordTransform.localRotation = Quaternion.Euler(0, 0, 0);
+                    swordTransform.localRotation = originalSwordRotation;
+                    Vector3 currentPivotOffset = swordTransform.TransformPoint(GetLeftBottomVertex());
+                    Vector3 pivotOffsetCorrection = originalPivotOffset - currentPivotOffset;
+                    swordTransform.position += pivotOffsetCorrection;
                 }
             }
         }

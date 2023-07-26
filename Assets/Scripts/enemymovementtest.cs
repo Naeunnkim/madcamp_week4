@@ -124,9 +124,14 @@ public class enemymovementtest : MonoBehaviour
     {
         Debug.Log("Enemy defeated!");
         ArrowController[] arrows = FindObjectsOfType<ArrowController>();
+        BulletController[] bullets = FindObjectsOfType<BulletController>();
         foreach (ArrowController arrow in arrows)
         {
             arrow.StopMoving();
+        }
+        foreach(BulletController bullet in bullets) 
+        { 
+            bullet.StopMoving(); 
         }
         if (goldManager != null)
         {
@@ -164,7 +169,7 @@ public class enemymovementtest : MonoBehaviour
             isCollidingAlly = true;
             collidingAllies.Add(allyUnit);
             enemyMovement.StopMoving();
-            damageOverTime = StartCoroutine(ApplyDamage(10f));
+            damageOverTime = StartCoroutine(ApplyDamage(15f));
         }
         else if (other.CompareTag("explosion"))
         {

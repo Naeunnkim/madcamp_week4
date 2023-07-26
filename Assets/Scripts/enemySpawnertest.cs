@@ -45,7 +45,7 @@ public class enemySpawnertest : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        while (currentWave <= 3)
+        while (currentWave <= 4)
         {
             switch (currentWave)
             {
@@ -56,7 +56,10 @@ public class enemySpawnertest : MonoBehaviour
                     StartCoroutine(SpawnWave2(enemies[1], wayPointsRoute2));
                     break;
                 case 3:
-                    StartCoroutine(SpawnWave3());
+                    StartCoroutine(SpawnWave3(enemies[2]));
+                    break;
+                case 4:
+                    StartCoroutine(SpawnWave4());
                     break;
                 default:
                     break;
@@ -89,7 +92,7 @@ public class enemySpawnertest : MonoBehaviour
         {
             GameObject clone1 = Instantiate(enemyInfo.prefab);
             enemymovementtest enemy1 = clone1.GetComponent<enemymovementtest>();
-            enemy1.SetGold(20);
+            enemy1.SetGold(25);
             enemy1.Setup(wayPointsRoute1);
 
             yield return new WaitForSeconds(enemyInfo.spawnTime);
@@ -105,7 +108,7 @@ public class enemySpawnertest : MonoBehaviour
         {
             GameObject clone2 = Instantiate(enemyInfo.prefab);
             enemymovementtest enemy2 = clone2.GetComponent<enemymovementtest>();
-            enemy2.SetGold(30);
+            enemy2.SetGold(35);
             enemy2.Setup(wayPointsRoute2);
 
             yield return new WaitForSeconds(enemyInfo.spawnTime);
@@ -113,7 +116,27 @@ public class enemySpawnertest : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnWave3()
+    private IEnumerator SpawnWave3(EnemyInfo enemyInfo)
+    {
+        float timeElapsed = 0f;
+
+        while (timeElapsed < waveTime)
+        {
+            int randomIndex = Random.Range(1, 3);
+            GameObject clone3 = Instantiate(enemyInfo.prefab);
+            enemymovementtest enemy3 = clone3.GetComponent<enemymovementtest>();
+            enemy3.SetGold(50);
+            if (randomIndex == 1)
+                enemy3.Setup(wayPointsRoute1);
+            else
+                enemy3.Setup(wayPointsRoute2);
+
+            yield return new WaitForSeconds(enemyInfo.spawnTime);
+            timeElapsed += enemyInfo.spawnTime;
+        }
+    }
+
+    private IEnumerator SpawnWave4()
     {
         float timeElapsed = 0f;
 
@@ -121,25 +144,25 @@ public class enemySpawnertest : MonoBehaviour
         {
             GameObject clone1 = Instantiate(enemies[0].prefab);
             enemymovementtest enemy1 = clone1.GetComponent<enemymovementtest>();
-            enemy1.SetGold(20);
+            enemy1.SetGold(25);
             enemy1.Setup(wayPointsRoute1);
 
             GameObject clone2 = Instantiate(enemies[1].prefab);
             enemymovementtest enemy2 = clone2.GetComponent<enemymovementtest>();
-            enemy2.SetGold(30);
+            enemy2.SetGold(35);
             enemy2.Setup(wayPointsRoute2);
 
             int randomIndex = Random.Range(1, 3);
             GameObject clone3 = Instantiate(enemies[randomIndex].prefab);
             enemymovementtest enemy3 = clone3.GetComponent<enemymovementtest>();
-            enemy3.SetGold(40);
+            enemy3.SetGold(50);
             if (randomIndex == 1)
                 enemy3.Setup(wayPointsRoute1);
             else
                 enemy3.Setup(wayPointsRoute2);
 
-            yield return new WaitForSeconds(enemies[2].spawnTime);
-            timeElapsed += enemies[0].spawnTime;
+            yield return new WaitForSeconds(enemies[1].spawnTime);
+            timeElapsed += enemies[1].spawnTime;
         }
     }
 }

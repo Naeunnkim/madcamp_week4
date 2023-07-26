@@ -53,6 +53,7 @@ public class Tower : MonoBehaviour
     }
 
     public void BuildTower(GameObject towerPrefab) {
+        upgrade = 0;
         Vector3 newPosition = transform.position;
         newPosition.y += 0.9f;
 
@@ -70,6 +71,7 @@ public class Tower : MonoBehaviour
 
     public void DestroyTower() {
         if (tower!=null) {
+            upgrade = 0;
             Destroy(tower);
             tower = null;
         }
@@ -80,5 +82,6 @@ public class Tower : MonoBehaviour
         DestroyTower();
         BuildTower(towerPrefab);
         upgrade += 1;
+        upgrade = Mathf.Min(2, upgrade);
     }
 }

@@ -190,14 +190,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3799710305478603526}
-  m_LocalRotation: {x: 0, y: 0, z: 0.42261827, w: 0.9063079}
-  m_LocalPosition: {x: -0.188, y: 0.056, z: 0}
-  m_LocalScale: {x: 0.7471568, y: 1.2, z: 0.7471568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17, y: 0.183, z: 0}
+  m_LocalScale: {x: 0.7471568, y: 1, z: 0.7471568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4704761884078974113}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 50}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3816369554797477179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -236,8 +236,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1779986293
-  m_SortingLayer: 4
+  m_SortingLayerID: 1736477899
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d77afeb4830de4743b9f230f8cbe687f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -642,8 +642,8 @@ MonoBehaviour:
   speed: 2
   health: {fileID: 100848938004877564}
   passEnemy: 0
-  maxHealth: 200
+  maxHealth: 175
   sword: {fileID: 3799710305478603526}
-  healingAmount: 15
-  enemyDamage: 10
+  healingAmount: 20
+  enemyDamage: 15
   healthOffset: {x: 0, y: 0.5, z: 0}

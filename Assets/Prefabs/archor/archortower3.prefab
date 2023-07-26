@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec58dc9eb551a14fa2f0260cd4de64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 2.5
+  distanceThreshold: 2.75
   circleObject: {fileID: 2666810128347486286}
 --- !u!61 &2019788435815767715
 BoxCollider2D:
@@ -110,7 +110,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042491820675517351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -350,7 +350,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3957043764042455094, guid: 7ec6644ced8b7124cad531c81a13130b, type: 3}
       propertyPath: shootCool
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2633854601386483353, guid: 7ec6644ced8b7124cad531c81a13130b, type: 3}
       propertyPath: m_RootOrder
@@ -428,7 +428,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3957043764042455094, guid: 7ec6644ced8b7124cad531c81a13130b, type: 3}
       propertyPath: shootCool
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2633854601386483353, guid: 7ec6644ced8b7124cad531c81a13130b, type: 3}
       propertyPath: m_RootOrder

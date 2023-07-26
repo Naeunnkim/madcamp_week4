@@ -11,7 +11,7 @@ public class BulletController : MonoBehaviour
     public float damage = 30f;
     private bool isMoving = false;
     private float timeAlive = 0f;
-    private float maxAliveTime = 5f;
+    private float maxAliveTime = 3f;
 
     public void SetTarget(GameObject enemy)
     {

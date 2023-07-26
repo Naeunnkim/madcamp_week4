@@ -268,8 +268,8 @@ MonoBehaviour:
   passEnemy: 0
   maxHealth: 150
   sword: {fileID: 4794726314363596761}
-  healingAmount: 15
-  enemyDamage: 10
+  healingAmount: 10
+  enemyDamage: 15
   healthOffset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1778289047002234572
 GameObject:
@@ -512,7 +512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4794726314363596761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.136, y: -0.056, z: 0}
+  m_LocalPosition: {x: 0.175, y: 0.009, z: 0}
   m_LocalScale: {x: 0.7471538, y: 0.7471538, z: 0.7471568}
   m_ConstrainProportionsScale: 0
   m_Children: []

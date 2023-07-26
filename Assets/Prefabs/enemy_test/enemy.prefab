@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478446296fbb946769a75c4c22a355c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &3869585493628067675
 MonoBehaviour:
@@ -192,12 +192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 85
   healthBar: {fileID: 6721896257080520328}
   healthBarOffset: {x: 0, y: 0.5, z: 0}
   arrowDamage: 20
-  bulletDamage: 30
-  BombDamage: 100
+  BombDamage: 200
   castleObject: {fileID: 6933042607634151132, guid: 6ce4d49e8473d0248b0b685b9d5c3542, type: 3}
 --- !u!61 &-7207878077777278036
 BoxCollider2D:
