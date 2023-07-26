@@ -12,9 +12,7 @@ public class Castle : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Debug.Log(castleHealth.ToString());
         castleHealth = maxHealth;
-        Debug.Log(castleHealth.ToString());
         if (healthBar != null)
         {
             UpdateHealthBar();
@@ -38,8 +36,6 @@ public class Castle : MonoBehaviour
     private void UpdateHealthBar()
     {
         float healthPercentage = castleHealth / maxHealth;
-        Debug.Log(healthPercentage
-            .ToString());
         healthBar.value = healthPercentage;
         healthBar.transform.position = transform.position + healthOffset;
     }

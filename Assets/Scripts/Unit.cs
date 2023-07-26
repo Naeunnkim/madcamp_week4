@@ -37,8 +37,8 @@ public class Unit : MonoBehaviour
         isCollidingEnemy = false;
         currentHealth = maxHealth;
         initialposition = transform.position;
-        rotationAngle = 120f;
-        rotationSpeed = 120f;
+        rotationAngle = 90f;
+        rotationSpeed = 180f;
         swordTransform = sword.transform;
         health = GetComponentInChildren<Slider>();
         if (health != null)
@@ -196,8 +196,12 @@ public class Unit : MonoBehaviour
                 // Switch direction when the target rotation is reached
                 rotateForward = !rotateForward;
             }
+            else if (currentRotation == initialRotation)
+            {
+                rotateForward = !rotateForward;
+            }
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 

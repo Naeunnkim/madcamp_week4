@@ -7,6 +7,9 @@ public class Tower : MonoBehaviour
 {
     public float angle = 0f;
     private GameObject tower = null;
+    public TowerType type;
+
+    public int upgrade = 0;
     public UIManager uiManager; //UIManager script 참조
 
     void Start() {
@@ -69,5 +72,12 @@ public class Tower : MonoBehaviour
             Destroy(tower);
             tower = null;
         }
+    }
+
+    public void UpgradeTower(GameObject towerPrefab)
+    {
+        DestroyTower();
+        BuildTower(towerPrefab);
+        upgrade += 1;
     }
 }

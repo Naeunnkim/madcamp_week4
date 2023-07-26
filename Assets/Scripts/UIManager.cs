@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
+using Unity.VisualScripting;
 
+public enum TowerType
+{
+    Archer,
+    Barrack,
+    Wizard
+}
 public class UIManager : MonoBehaviour
 {
     private GameObject tower = null;
+    private float upgrade = 0f;
 
-    public GameObject archerTowerPrefab;
-    public GameObject barrackTowerPrefab;
-    public GameObject wizardTowerPrefab;
+    public GameObject[] archerTowerPrefab;
+    public GameObject[] barrackTowerPrefab;
+    public GameObject[] wizardTowerPrefab;
 
     public GameObject uiContainer1; //canvas1-build tower
     public GameObject uiContainer2; //canvas2-upgrade and sell
@@ -24,8 +33,9 @@ public class UIManager : MonoBehaviour
 
     private Tower towerScript;
 
-    //gold test
-    //public Text goldText;
+    //gold text
+    public TextMeshProUGUI goldText;
+
 
     private bool isUIVisible1 = false; //canvas1
     private bool isUIVisible2 = false; //canvas2
@@ -35,6 +45,16 @@ public class UIManager : MonoBehaviour
         HideUI2();
         //UpdateGoldText(GoldManager.Instance.gold);
         //GoldManager.Instance.OnGoldChanged.AddListener(UpdateGoldText);
+        if (GoldManager.Instance != null)
+        {
+            GoldManager.Instance.OnGoldChanged.AddListener(UpdateGoldText);
+        }
+        else
+        {
+            Debug.LogError("goldmanager instance is null");
+        }
+
+        UpdateGoldText(GoldManager.Instance.gold);
 
         archerButton.onClick.AddListener(OnArcherButtonClick);
         barrackButton.onClick.AddListener(OnBarrackButtonClick);
@@ -46,6 +66,7 @@ public class UIManager : MonoBehaviour
     public void setTower(Tower tower)
     {
         towerScript = tower;
+        upgrade = tower.upgrade;
         if (isUIVisible1)
         {
             uiContainer1.SetActive(false);
@@ -136,43 +157,104 @@ public class UIManager : MonoBehaviour
     //tower build button click event handle
     public void OnArcherButtonClick() {
         int cost = 60;
-        towerScript.BuildTower(archerTowerPrefab);
-        HideUI1();
 
-        // if(GoldManager.Instance.SubtractGold(cost)) {
-            
-        // }
+        if (GoldManager.Instance.SubtractGold(cost))
+        {
+            towerScript.BuildTower(archerTowerPrefab[0]);
+            towerScript.type = TowerType.Archer;
+            HideUI1();
+        }
+        else
+        {
+            Debug.Log("not enough gold");
+            HideUI1();
+        }
 
-        // else {
-        //     Debug.Log("not enough gold");
-        // }
 
-        
     }
 
     //tower build button click event handle
     public void OnBarrackButtonClick() {
-        towerScript.BuildTower(barrackTowerPrefab);
-        HideUI1();
+        int cost = 60;
+
+        if (GoldManager.Instance.SubtractGold(cost))
+        {
+            towerScript.BuildTower(barrackTowerPrefab[0]);
+            towerScript.type = TowerType.Barrack;
+            HideUI1();
+        }
+        else
+        {
+            Debug.Log("not enough gold");
+            HideUI1();
+        }
     }
 
     //tower build button click event handle
     public void OnWizardButtonClick() {
-        towerScript.BuildTower(wizardTowerPrefab);
-        HideUI1();
+        int cost = 90;
+
+        if (GoldManager.Instance.SubtractGold(cost))
+        {
+            towerScript.BuildTower(wizardTowerPrefab[0]);
+            towerScript.type = TowerType.Wizard;
+            HideUI1();
+        }
+        else
+        {
+            Debug.Log("not enough gold");
+            HideUI1();
+        }
+
     }
 
     public void OnUpgradeButtonClick() {
         //upgrade tower
+        switch (upgrade)
+        {
+            case 0:
+                UpgradeTower(0);
+                break;
+            case 1:
+                UpgradeTower(1);
+                break;
+            default:
+                Debug.Log("No Uprade Left!");
+                break;
+        }
         HideUI2();
     }
 
     public void OnSellButtonClick() {
+        //tower에 따라 sellvalue를 다르게 주고싶음...
+        int sellValue = 30;
+
         //sell tower
-        if(towerScript != null) {
+        if (towerScript != null)
+        {
+            GoldManager.Instance.AddGold(sellValue);
             towerScript.DestroyTower();
         }
+
         HideUI2();
+    }
+
+    private void UpgradeTower(int upgrade)
+    {
+        switch (towerScript.type)
+        {
+            case TowerType.Archer:
+                towerScript.UpgradeTower(archerTowerPrefab[upgrade + 1]);
+                break;
+            case TowerType.Barrack:
+                towerScript.UpgradeTower(barrackTowerPrefab[upgrade + 1]);
+                break;
+            case TowerType.Wizard:
+                towerScript.UpgradeTower(wizardTowerPrefab[upgrade + 1]);
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -203,7 +285,10 @@ public class UIManager : MonoBehaviour
         */
     }
 
-    // public void UpdateGoldText(int newGoldValue) {
-    //     goldText.text = newGoldValue.ToString();
-    // }
+    public void UpdateGoldText(int newGoldValue)
+    {
+        goldText.text = newGoldValue.ToString();
+
+    }
+
 }

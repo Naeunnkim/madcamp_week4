@@ -1243,6 +1243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!61 &207283216
 BoxCollider2D:
@@ -1352,6 +1354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!1 &210934605
 GameObject:
@@ -3590,6 +3594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!1001 &734259997
 PrefabInstance:
@@ -4237,6 +4243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!1 &856823687
 GameObject:
@@ -6065,6 +6073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!61 &1171698216
 BoxCollider2D:
@@ -6339,6 +6349,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209891637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8712536954532122072, guid: bfa4e34b3447aec4f9cea5b36d66674e, type: 3}
+  m_PrefabInstance: {fileID: 1255261285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1211104265
 GameObject:
   m_ObjectHideFlags: 0
@@ -8802,6 +8823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!61 &1683161763
 BoxCollider2D:
@@ -10099,6 +10122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!1 &1966757036 stripped
 GameObject:
@@ -10163,6 +10188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!1001 &1976070868
 PrefabInstance:
@@ -10827,6 +10854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  type: 0
+  upgrade: 0
   uiManager: {fileID: 1510475610}
 --- !u!1 &2041606883
 GameObject:
@@ -11273,6 +11302,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: goldText
+      value: 
+      objectReference: {fileID: 1209891637}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
       propertyPath: sellButton
       value: 
       objectReference: {fileID: 765973232}
@@ -11288,6 +11321,42 @@ PrefabInstance:
       propertyPath: upgradeButton
       value: 
       objectReference: {fileID: 1664052193}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: archerTowerPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8615391774742353210, guid: d6665e0ae368922418f6d781a5a0ce83, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: archerTowerPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 1222055850292466979, guid: 9b5da854b0d27ff468902277bbb074af, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: archerTowerPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 2042491820675517351, guid: 389a3eed4af7a2949a8011cb1135e39d, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: wizardTowerPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4195915888566828196, guid: ab3624df0b1e25c4d9005227803a379e, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: wizardTowerPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 2829885321241179519, guid: b730d2ee3c998124e89a932f18ee3c53, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: wizardTowerPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 4522390100953520359, guid: e727ff2069ef1ae4f921f0ea7c42d709, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: barrackTowerPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 2968335869425579712, guid: 9f59ed84a525f0b409fefcecc2c1379d, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: barrackTowerPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 9037204524285132179, guid: 0102114ee30a49048ae37d3e147078ea, type: 3}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: barrackTowerPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 5342848081198081074, guid: af01b0c7e7b6fbd4c8af42d4e2a8a43b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

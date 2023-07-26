@@ -21,11 +21,13 @@ public class AllySpawn : MonoBehaviour
         newPosition2 = transform.position + offset2;
     }
 
-    private IEnumerator RespawnAlly(GameObject ally, Vector3 position)
+    /*
+     * private IEnumerator RespawnAlly(GameObject ally, Vector3 position)
     {
         yield return new WaitForSeconds(respawnDelay);
         ally = Instantiate(allyPrefab, position, Quaternion.identity);
     }
+    */
 
     private void Update()
     {
@@ -44,14 +46,28 @@ public class AllySpawn : MonoBehaviour
 
         if (ally1 == null)
         {
-            ally1 = Instantiate(allyPrefab, newPosition1, Quaternion.identity);
+            GameObject newAlly1 = Instantiate(allyPrefab, newPosition1, Quaternion.identity);
+            ally1 = newAlly1;
         }
 
         if (ally2 == null)
         {
-            ally2 = Instantiate(allyPrefab, newPosition2, Quaternion.identity);
+            GameObject newAlly2 = Instantiate(allyPrefab, newPosition2, Quaternion.identity);
+            ally2 = newAlly2;
         }
 
         respawnCoroutine = null;
+    }
+
+    private void OnDestroy()
+    {
+        if (ally1 != null)
+        {
+            Destroy(ally1);
+        }
+        if(ally2 != null)
+        {
+            Destroy(ally2);
+        }
     }
 }
