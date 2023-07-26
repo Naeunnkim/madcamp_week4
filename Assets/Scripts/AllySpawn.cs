@@ -4,11 +4,11 @@ using UnityEngine;
 public class AllySpawn : MonoBehaviour
 {
     public GameObject allyPrefab;
-    private GameObject ally1 = null;
-    private GameObject ally2 = null;
+    public GameObject ally1;
+    public GameObject ally2;
 
     private Vector3 offset1 = new Vector3(-1f, -0.5f, 0f);
-    private Vector3 offset2 = new Vector3(-0.5f, -1f, 0f);
+    private Vector3 offset2 = new Vector3(-1f, -1f, 0f);
     private Vector3 newPosition1;
     private Vector3 newPosition2;
 
@@ -19,9 +19,6 @@ public class AllySpawn : MonoBehaviour
     {
         newPosition1 = transform.position + offset1;
         newPosition2 = transform.position + offset2;
-
-        ally1 = Instantiate(allyPrefab, newPosition1, Quaternion.identity);
-        ally2 = Instantiate(allyPrefab, newPosition2, Quaternion.identity);
     }
 
     private IEnumerator RespawnAlly(GameObject ally, Vector3 position)

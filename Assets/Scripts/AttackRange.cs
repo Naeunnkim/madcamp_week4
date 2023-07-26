@@ -22,6 +22,6 @@ public class AttackRange : MonoBehaviour
 
     public void SetCircleRadius(float radius)
     {
-        circleObject.transform.localScale = new Vector3(radius * 4f, radius * 2f, 0f);
+        circleObject.transform.localScale = new Vector3(radius * 3f, radius * 1.5f, 0f);
     }
 }

@@ -8,7 +8,7 @@ public class enemymovementtest : MonoBehaviour
 {
     private int wayPointCount;
     private Transform[] wayPoints;
-    private int currentIndex =0;
+    private int currentIndex = 0;
     private enemymovement enemyMovement;
     public float currentHealth;
     public float maxHealth = 100f;
@@ -19,13 +19,16 @@ public class enemymovementtest : MonoBehaviour
     private bool isCollidingAlly = false;
     public float arrowDamage = 20f;
     public float bulletDamage = 30f;
+    public float BombDamage = 100f;
     private Unit allyUnit;
-    private List <Unit> collidingAllies = new List <Unit>();
+    public GameObject castleObject;
+    private Castle castle;
+    private List<Unit> collidingAllies = new List<Unit>();
 
     private void Start()
     {
         currentHealth = maxHealth;
-        healthBar = GetComponentInChildren<Slider>();
+        castle = castleObject.GetComponent<Castle>();
         if (healthBar != null)
         {
             healthBar.transform.position = transform.position + healthBarOffset;
@@ -39,7 +42,8 @@ public class enemymovementtest : MonoBehaviour
             healthBar.transform.position = transform.position + healthBarOffset;
         }
     }
-    public void Setup(Transform[] wayPoints) {
+    public void Setup(Transform[] wayPoints)
+    {
         enemyMovement = GetComponent<enemymovement>();
 
         //적 이동 경로 wayPoints 정보 설정
@@ -54,15 +58,18 @@ public class enemymovementtest : MonoBehaviour
         StartCoroutine("OnMove");
     }
 
-    private IEnumerator OnMove() {
+    private IEnumerator OnMove()
+    {
         NextMoveTo();
- 
-        while (true) {
+
+        while (true)
+        {
             //적 오브젝트 회전
             //transform.Rotate(Vector3.forward*10);
-            
 
-            if(!isCollidingAlly && Vector3.Distance(transform.position, wayPoints[currentIndex].position)<0.02f* enemyMovement.MoveSpeed) {
+
+            if (!isCollidingAlly && Vector3.Distance(transform.position, wayPoints[currentIndex].position) < 0.02f * enemyMovement.MoveSpeed)
+            {
                 NextMoveTo();
             }
 
@@ -70,21 +77,24 @@ public class enemymovementtest : MonoBehaviour
         }
     }
 
-    private void NextMoveTo() {
-        
+    private void NextMoveTo()
+    {
+
         //아직 이동할 waypoint가 남았다면
-        if(currentIndex<wayPointCount-1) {
+        if (currentIndex < wayPointCount - 1)
+        {
             //적의 위치를 정확하게 목표 위치로 설정
             transform.position = wayPoints[currentIndex].position;
 
             //이동 방향 설정 => 다음 목표지점
             currentIndex++;
-            Vector3 direction = (wayPoints[currentIndex].position-transform.position).normalized;
+            Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
             enemyMovement.MoveTo(direction);
         }
 
         //현재 위치가 마지막 waypoint이면
-        else {
+        else
+        {
             Destroy(gameObject);
         }
     }
@@ -142,6 +152,10 @@ public class enemymovementtest : MonoBehaviour
             enemyMovement.StopMoving();
             damageOverTime = StartCoroutine(ApplyDamage(10f));
         }
+        else if (other.CompareTag("explosion"))
+        {
+            TakeDamage(BombDamage);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -153,7 +167,8 @@ public class enemymovementtest : MonoBehaviour
             {
                 collidingAllies.Remove(exitedAlly);
             }
-            if (collidingAllies.Count == 0) {
+            if (collidingAllies.Count == 0)
+            {
                 isCollidingAlly = false;
                 if (damageOverTime != null)
                 {

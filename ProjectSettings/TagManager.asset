@@ -9,6 +9,9 @@ TagManager:
   - bullet
   - ally
   - Sword
+  - Block
+  - explosion
+  - Cannon
   layers:
   - Default
   - TransparentFX
@@ -58,12 +61,18 @@ TagManager:
   - name: enemy
     uniqueID: 2514981003
     locked: 0
+  - name: ally
+    uniqueID: 810481123
+    locked: 0
   - name: tower
     uniqueID: 1071008929
     locked: 0
   - name: weapon
     uniqueID: 1736477899
     locked: 0
-  - name: unithealthbehind
+  - name: unithealth
     uniqueID: 4200485861
+    locked: 0
+  - name: ui
+    uniqueID: 1634937997
     locked: 0

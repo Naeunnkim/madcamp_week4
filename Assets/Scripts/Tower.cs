@@ -5,12 +5,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public GameObject towerPrefab;
+    public float angle = 0f;
     private GameObject tower = null;
     public UIManager uiManager; //UIManager script 참조
-
-    public GameObject uiContainer1;
-    public GameObject uiContainer2;
 
     void Start() {
     uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
@@ -19,13 +16,14 @@ public class Tower : MonoBehaviour
     }
 }
     // Start is called before the first frame update
-    void OnMouseUp()
+    void OnMouseDown()
     {
         //2
+        uiManager.setTower(this);
         if (!tower)
         {
             if(uiManager!= null) {
-                uiManager.ShowUI(uiContainer1);
+                uiManager.ShowUI1();
             }
             else {
                 Debug.LogError("UIManager not assigned");
@@ -40,7 +38,7 @@ public class Tower : MonoBehaviour
 
         else if(tower) {
             if(uiManager!=null) {
-                uiManager.ShowUI(uiContainer2);
+                uiManager.ShowUI2();
             }
             else {
                 Debug.LogError("UIManager not assigned");
@@ -50,16 +48,16 @@ public class Tower : MonoBehaviour
         
     }
 
-    public void BuildTower(Vector3 position, GameObject towerPrefab) {
+    public void BuildTower(GameObject towerPrefab) {
         Vector3 newPosition = transform.position;
         newPosition.y += 0.9f;
 
-        tower = Instantiate(towerPrefab, position, Quaternion.identity);
+        tower = Instantiate(towerPrefab, newPosition, Quaternion.Euler(0f, angle, 0f));
         tower.layer = LayerMask.NameToLayer("Ignore Raycast");
 
         if(uiManager!=null) {
-            uiManager.HideUI(uiContainer1);
-            uiManager.HideUI(uiContainer2);
+            uiManager.HideUI1();
+            uiManager.HideUI2();
         }
         else {
             Debug.LogError("UIManager is not assigned");
@@ -67,7 +65,7 @@ public class Tower : MonoBehaviour
     }
 
     public void DestroyTower() {
-        if(tower!=null) {
+        if (tower!=null) {
             Destroy(tower);
             tower = null;
         }

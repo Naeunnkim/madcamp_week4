@@ -5,24 +5,25 @@ using UnityEngine.UI;
 
 public class FireCool : MonoBehaviour
 {
-    public RectTransform scrollbar;
+    public Scrollbar scrollbar;
     public float cooldown = 0;
     private Image scrollbarImage;
-    private Vector3 objectInitialPosition;
+    private Vector3 offset = new Vector3(1f, 0f, 0f);
+    private Vector3 newPosition;
     // Start is called before the first frame update
     void Start()
     {
         cooldown = GetComponentInParent<Bomber>().shootDelay;
         scrollbarImage = scrollbar.GetComponent<Image>();
-        objectInitialPosition = transform.position;
+        newPosition = transform.position + offset;
+        scrollbar.transform.position = newPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
         float percentageFilled = cooldown / 100f;
-        float newWidth = percentageFilled * scrollbar.rect.width;
-        scrollbar.sizeDelta = new Vector2(newWidth, scrollbar.sizeDelta.y);
+        scrollbar.value = percentageFilled;
 
         if (percentageFilled == 1)
         {

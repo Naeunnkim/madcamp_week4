@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     public Button upgradeButton;
     public Button sellButton;
 
-    public Tower towerScript;
+    private Tower towerScript;
 
     //gold test
     //public Text goldText;
@@ -31,8 +31,8 @@ public class UIManager : MonoBehaviour
     private bool isUIVisible2 = false; //canvas2
 
     void Start() {
-        HideUI(uiContainer1);
-        HideUI(uiContainer2);
+        HideUI1();
+        HideUI2();
         //UpdateGoldText(GoldManager.Instance.gold);
         //GoldManager.Instance.OnGoldChanged.AddListener(UpdateGoldText);
 
@@ -41,11 +41,25 @@ public class UIManager : MonoBehaviour
         wizardButton.onClick.AddListener(OnWizardButtonClick);
         upgradeButton.onClick.AddListener(OnUpgradeButtonClick);
         sellButton.onClick.AddListener(OnSellButtonClick);
-
-        towerScript = FindObjectOfType<Tower>();
     }
 
-    public void ShowUI(GameObject uiContainer) {
+    public void setTower(Tower tower)
+    {
+        towerScript = tower;
+        if (isUIVisible1)
+        {
+            uiContainer1.SetActive(false);
+            isUIVisible1 = false;
+        }
+        if (isUIVisible2)
+        {
+            uiContainer2.SetActive(false);
+            isUIVisible2 = false;
+        }
+    }
+
+    /*
+     public void ShowUI(GameObject uiContainer) {
         uiContainer.SetActive(true);
 
         if(uiContainer==uiContainer1) {
@@ -56,16 +70,52 @@ public class UIManager : MonoBehaviour
         }
         
     }
+    */
 
-    public void HideUI(GameObject uiContainer) {
+    public void ShowUI1()
+    {
+        if (isUIVisible2)
+        {
+            uiContainer2.SetActive(false);
+            isUIVisible2 = false;
+        }
+        uiContainer1.SetActive(true);
+        isUIVisible1 = true;
+    }
+
+    public void ShowUI2()
+    {
+        if (isUIVisible1)
+        {
+            uiContainer1.SetActive(false);
+            isUIVisible1 = false;
+        }
+        uiContainer2.SetActive(true);
+        isUIVisible2 = true;
+    }
+
+    /*
+     public void HideUI(GameObject uiContainer) {
         uiContainer.SetActive(false);
         if(uiContainer == uiContainer1) {
             isUIVisible1 = false;
         }
         else {
             isUIVisible2 = false;
-        }
-        
+        }   
+    }
+    */
+
+    public void HideUI1()
+    {
+        uiContainer1.SetActive(false);
+        isUIVisible1 = false;
+    }
+
+    public void HideUI2()
+    {
+        uiContainer2.SetActive(false);
+        isUIVisible2 = false;
     }
 
     private IEnumerator HideUICoroutine()
@@ -86,12 +136,8 @@ public class UIManager : MonoBehaviour
     //tower build button click event handle
     public void OnArcherButtonClick() {
         int cost = 60;
-
-        Vector3 towerPosition = towerScript.transform.position;
-            towerPosition.y += 0.9f;
-
-            towerScript.BuildTower(towerPosition, archerTowerPrefab);
-            HideUI(uiContainer1);
+        towerScript.BuildTower(archerTowerPrefab);
+        HideUI1();
 
         // if(GoldManager.Instance.SubtractGold(cost)) {
             
@@ -106,25 +152,19 @@ public class UIManager : MonoBehaviour
 
     //tower build button click event handle
     public void OnBarrackButtonClick() {
-        Vector3 towerPosition = towerScript.transform.position;
-        towerPosition.y += 0.9f;
-
-        towerScript.BuildTower(towerPosition, barrackTowerPrefab);
-        HideUI(uiContainer1);
+        towerScript.BuildTower(barrackTowerPrefab);
+        HideUI1();
     }
 
     //tower build button click event handle
     public void OnWizardButtonClick() {
-        Vector3 towerPosition = towerScript.transform.position;
-        towerPosition.y += 0.9f;
-
-        towerScript.BuildTower(towerPosition, wizardTowerPrefab);
-        HideUI(uiContainer1);
+        towerScript.BuildTower(wizardTowerPrefab);
+        HideUI1();
     }
 
     public void OnUpgradeButtonClick() {
         //upgrade tower
-        HideUI(uiContainer2);
+        HideUI2();
     }
 
     public void OnSellButtonClick() {
@@ -132,11 +172,12 @@ public class UIManager : MonoBehaviour
         if(towerScript != null) {
             towerScript.DestroyTower();
         }
-        HideUI(uiContainer2);
+        HideUI2();
     }
 
 
     void Update() {
+        /*
         if (Input.GetMouseButtonDown(0)) // 왼쪽 마우스 클릭 시
         {
             // UI가 표시되어 있고, 캔버스를 클릭한 경우는 숨기지 않도록 합니다.
@@ -157,9 +198,9 @@ public class UIManager : MonoBehaviour
                     return;
                 }
             }
-
             StartCoroutine(HideUICoroutine());
         }
+        */
     }
 
     // public void UpdateGoldText(int newGoldValue) {
