@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: 96f44268f7422b74e8b6602906f9cf45
   - enabled: 1
+    path: Assets/Scenes/Map-tutorial.unity
+    guid: c62b6334c21354fe7b70fea751178b48
+  - enabled: 1
     path: Assets/Prefabs/map2.unity
     guid: 11d44f91f363d4298ab0f32e1a074f6e
   - enabled: 1
