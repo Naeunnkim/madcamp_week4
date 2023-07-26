@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     public float angle = 0f;
     private GameObject tower = null;
     public TowerType type;
+    private GameObject towerprefab;
 
     public int upgrade = 0;
     public UIManager uiManager; //UIManager script 참조

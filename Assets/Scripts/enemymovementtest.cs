@@ -18,17 +18,22 @@ public class enemymovementtest : MonoBehaviour
     private float damageInterval = 1f;
     private bool isCollidingAlly = false;
     public float arrowDamage = 20f;
-    public float bulletDamage = 30f;
+    private float bulletDamage = 30f;
     public float BombDamage = 100f;
     private Unit allyUnit;
     public GameObject castleObject;
     private Castle castle;
     private List<Unit> collidingAllies = new List<Unit>();
+    private GameObject goldManagerObject;
+    private GoldManager goldManager;
+    private int gold = 0;
 
     private void Start()
     {
         currentHealth = maxHealth;
         castle = castleObject.GetComponent<Castle>();
+        goldManagerObject = GameObject.Find("gold");
+        goldManager = goldManagerObject.GetComponent<GoldManager>();
         if (healthBar != null)
         {
             healthBar.transform.position = transform.position + healthBarOffset;
@@ -123,7 +128,15 @@ public class enemymovementtest : MonoBehaviour
         {
             arrow.StopMoving();
         }
+        if (goldManager != null)
+        {
+            goldManager.AddGold(gold);
+        }
         Destroy(gameObject);
+    }
+
+    public void SetGold(int Gold) {
+        gold = Gold;
     }
 
     void UpdateHealthBar()
@@ -141,6 +154,7 @@ public class enemymovementtest : MonoBehaviour
         }
         else if (other.CompareTag("bullet"))
         {
+            bulletDamage = other.GetComponent<BulletController>().damage;
             TakeDamage(bulletDamage);
         }
         else if (other.CompareTag("ally") && !isCollidingAlly && !other.GetComponent<Unit>().passEnemy)

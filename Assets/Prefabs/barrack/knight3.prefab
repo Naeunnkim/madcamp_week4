@@ -530,7 +530,7 @@ MonoBehaviour:
   speed: 2
   health: {fileID: 2340802102901505128}
   passEnemy: 0
-  maxHealth: 150
+  maxHealth: 250
   sword: {fileID: 7546291795562576627}
   healingAmount: 15
   enemyDamage: 10

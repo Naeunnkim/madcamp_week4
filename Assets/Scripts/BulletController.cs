@@ -10,6 +10,8 @@ public class BulletController : MonoBehaviour
     public float speed = 10f;
     public float damage = 30f;
     private bool isMoving = false;
+    private float timeAlive = 0f;
+    private float maxAliveTime = 5f;
 
     public void SetTarget(GameObject enemy)
     {
@@ -34,6 +36,7 @@ public class BulletController : MonoBehaviour
     {
         if (target != null && !isMoving)
         {
+            timeAlive += Time.deltaTime;
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
             if (!target.GetComponent<enemymovementtest>().IsAlive() || Vector2.Distance(transform.position, target.transform.position) < 0.1f)
@@ -45,6 +48,10 @@ public class BulletController : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
+        }
+        if (timeAlive >= maxAliveTime)
+        {
+            Destroy(gameObject);
         }
     }
 

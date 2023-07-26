@@ -156,7 +156,7 @@ public class UIManager : MonoBehaviour
 
     //tower build button click event handle
     public void OnArcherButtonClick() {
-        int cost = 60;
+        int cost = 50;
 
         if (GoldManager.Instance.SubtractGold(cost))
         {
@@ -192,7 +192,7 @@ public class UIManager : MonoBehaviour
 
     //tower build button click event handle
     public void OnWizardButtonClick() {
-        int cost = 90;
+        int cost = 70;
 
         if (GoldManager.Instance.SubtractGold(cost))
         {
@@ -210,24 +210,46 @@ public class UIManager : MonoBehaviour
 
     public void OnUpgradeButtonClick() {
         //upgrade tower
-        switch (upgrade)
+        int cost = 35;
+        if (GoldManager.Instance.SubtractGold(cost))
         {
-            case 0:
-                UpgradeTower(0);
-                break;
-            case 1:
-                UpgradeTower(1);
-                break;
-            default:
-                Debug.Log("No Uprade Left!");
-                break;
+            switch (upgrade)
+            {
+                case 0:
+                    UpgradeTower(0);
+                    break;
+                case 1:
+                    UpgradeTower(1);
+                    break;
+                default:
+                    Debug.Log("No Uprade Left!");
+                    break;
+            }
+        }
+        else
+        {
+            Debug.Log("not enough gold");
         }
         HideUI2();
     }
 
     public void OnSellButtonClick() {
         //tower에 따라 sellvalue를 다르게 주고싶음...
-        int sellValue = 30;
+        int sellValue = 0;
+        switch (towerScript.type)
+        {
+            case TowerType.Archer:
+                sellValue = 30;
+                break;
+            case TowerType.Barrack:
+                sellValue = 35;
+                break;
+            case TowerType.Wizard:
+                sellValue = 40;
+                break;
+            default:
+                break;
+        }
 
         //sell tower
         if (towerScript != null)
@@ -235,7 +257,6 @@ public class UIManager : MonoBehaviour
             GoldManager.Instance.AddGold(sellValue);
             towerScript.DestroyTower();
         }
-
         HideUI2();
     }
 
