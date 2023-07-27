@@ -28,6 +28,9 @@ MadRush<br/><br/>
 
 ### 시작 화면
 
+<p>
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/b9917974-32b6-413c-b8d1-d013193af7d7" height="32%" width="32%">
+</p>
 ### 스테이지 선택 화면
 
 ### 맵1 - 튜토리얼
@@ -40,4 +43,5 @@ MadRush<br/><br/>
 
 ### 게임 결과 화면
 
+### 기타 기능
 
