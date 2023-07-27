@@ -32,7 +32,7 @@ MadRush<br/><br/>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/b9917974-32b6-413c-b8d1-d013193af7d7" height="32%" width="32%">
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/e9bedb5c-10b5-4f62-894d-ca994853500f" height="32%" width="32%">
 </p>
-<br/>
+<br/><br/>
 
 - 게임 시작 화면으로 로고 아래 시작 버튼을 누르면 스테이지 선택 화면으로 이동합니다.
 - 스테이지 선택 화면에는 3개의 맵이 있으며, 각각의 맵은 적의 공격 횟수와 이동 경로 등에 변화를 주어 난이도에 차이를 주었습니다.
@@ -44,10 +44,17 @@ MadRush<br/><br/>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/21cd9442-c9da-4c65-a135-41aaace394c2" height="32%" width="32%">
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/5f1c9a8f-1b99-4b5c-ad5d-397b2f4107e3" height="32%" width="32%">
 </p>
+<br/><br/><br/>
 
 - 서로 다른 3개의 맵을 플레이 할 수 있도록 구성했습니다.
 
 ### 타워 설명
+
+<p>
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/7fd676f6-1f3a-482b-bad0-3dedc249a1fe" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/927de0cc-9bbc-4b33-9b74-f70c93d0f7b3" height="32%" width="32%">
+</p>
+<br/><br/>
 
 ### 게임 결과 화면
 
@@ -55,6 +62,7 @@ MadRush<br/><br/>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/870bb1f3-c6d3-4502-923c-22a09f6f5e53" height="32%" width="32%">
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/51f48964-3244-48d8-ae42-2d9b9ec36462" height="32%" width="32%">
 </p>
+<br/><br/>
 
 - 적의 이동을 2번 이상 못 막을 시 Game Over 페이지로 이동합니다.
 - 모든 wave의 공격을 무사히 막을 경우 You Win 페이지로 이동합니다.
