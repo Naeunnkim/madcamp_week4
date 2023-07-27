@@ -31,6 +31,10 @@ MadRush<br/><br/>
 <p>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/b9917974-32b6-413c-b8d1-d013193af7d7" height="32%" width="32%">
 </p>
+<br/>
+
+- 게임 시작 화면으로 로고 아래 시작 버튼을 누르면 스테이지 선택 화면으로 이동합니다.
+
 ### 스테이지 선택 화면
 
 ### 맵1 - 튜토리얼
