@@ -8,7 +8,7 @@
 ## 팀원
 
 
-* 카이스트 전산학부 [김민재]()
+* 카이스트 전산학부 [김민재](https://github.com/akmj4869)
 * 한양대학교 컴퓨터소프트웨어학부 [김나은](https://github.com/Naeunnkim)
 
 <br/>
