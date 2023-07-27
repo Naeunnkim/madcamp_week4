@@ -43,4 +43,4 @@ MadRush<br/><br/>
 ### 게임 결과 화면
 
 ### 기타 기능
-
+- audio manager script를 작성해 scene이 변경되어도 배경음악이 끊기지 않도록 구현했습니다.
