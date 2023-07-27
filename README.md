@@ -39,6 +39,12 @@ MadRush<br/><br/>
 
 ### 맵 화면
 
+<p>
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/ad87473d-cd04-4ac6-8a56-0b3054bc1523" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/21cd9442-c9da-4c65-a135-41aaace394c2" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/5f1c9a8f-1b99-4b5c-ad5d-397b2f4107e3" height="32%" width="32%">
+</p>
+
 ### 플레이 화면
 
 ### 게임 결과 화면
