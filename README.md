@@ -88,5 +88,11 @@ __<MadRush>__<br/><br/>
 - 모든 wave의 공격을 무사히 막을 경우 You Win 페이지로 이동합니다.
 - 각각의 결과 화면에서는 retry 버튼을 눌러 같은 맵을 재시작 할 수 있으며, stage choice 버튼을 눌러 맵 선택 화면으로 돌아갈 수 있습니다.
 
+### 게임 플레이 화면
+<p>
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/f04b6f76-6762-4e67-ae2f-07d222b1b5b4">
+</p>
+<br/>
+
 ### 기타 기능
 - audio manager script를 작성해 scene이 변경되어도 배경음악이 끊기지 않도록 구현했습니다.
