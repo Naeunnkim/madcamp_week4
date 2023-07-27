@@ -448,4 +448,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 2538004572670470370, guid: 0d1e66e76a3f41c48b537b5e1b1d0587, type: 3}
-  shootCool: 1.5
+  shootCool: 2

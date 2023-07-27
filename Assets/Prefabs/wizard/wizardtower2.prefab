@@ -447,5 +447,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de81be8f81d3e7d469e40b8ed1928baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 2538004572670470370, guid: 0d1e66e76a3f41c48b537b5e1b1d0587, type: 3}
+  BulletPrefab: {fileID: 5103721722167892877, guid: f4e9791db361f824f97c0cb559f97228, type: 3}
   shootCool: 2

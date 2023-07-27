@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Castle : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class Castle : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            castleHealth -= 10f;
+            castleHealth -= 50f;
             UpdateHealthBar();
         }
     }
@@ -38,5 +39,12 @@ public class Castle : MonoBehaviour
         float healthPercentage = castleHealth / maxHealth;
         healthBar.value = healthPercentage;
         healthBar.transform.position = transform.position + healthOffset;
+        if (castleHealth <= 0f)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            SceneManager.LoadScene("GameOver");
+            PlayerPrefs.SetString("RetryScene", currentSceneName);
+        }
     }
 }

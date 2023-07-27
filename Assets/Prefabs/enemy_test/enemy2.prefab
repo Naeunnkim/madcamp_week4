@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 200
   healthBar: {fileID: 379328924036509092}
   healthBarOffset: {x: 0, y: 0.5, z: 0}
   arrowDamage: 30
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478446296fbb946769a75c4c22a355c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1.5
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &7925719628628456205
 GameObject:

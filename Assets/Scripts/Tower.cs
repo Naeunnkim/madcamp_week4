@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
     public UIManager uiManager; //UIManager script 참조
 
     void Start() {
-    uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+    //uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     if (uiManager == null) {
         Debug.LogError("UIManager not found or not attached to any GameObject!");
     }

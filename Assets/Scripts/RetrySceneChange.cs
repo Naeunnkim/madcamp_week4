@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class RetrySceneChange : MonoBehaviour
 {
     public void RetrySceneBtn () {
-        SceneManager.LoadScene("Map");
+        string sceneToReload = PlayerPrefs.GetString("RetryScene", "Map");
+        SceneManager.LoadScene(sceneToReload);
     }
 }
