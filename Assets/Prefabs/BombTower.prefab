@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 3849218659289506298, guid: c0869ed5dee1c6d4dacafa9114fffc21, type: 3}
   rangePrefab: {fileID: 3840529328525300128, guid: 29ba9252277390f4a8bbb9e1f4b768c2, type: 3}
-  shootDelay: 30
+  shootDelay: 20
   slider: {fileID: 6410950933082618449}
 --- !u!1001 &3286628714434835088
 PrefabInstance:

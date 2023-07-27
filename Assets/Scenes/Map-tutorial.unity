@@ -888,6 +888,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2065495161}
     - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
       propertyPath: towerScript
       value: 
       objectReference: {fileID: 0}
@@ -895,6 +899,10 @@ PrefabInstance:
       propertyPath: uiContainer2
       value: 
       objectReference: {fileID: 2065495163}
+    - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
+      propertyPath: buildingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
     - target: {fileID: 8751711102060738607, guid: 406dade7ed8d0d44e9cd59c1e77891c5, type: 3}
       propertyPath: upgradeButton
       value: 

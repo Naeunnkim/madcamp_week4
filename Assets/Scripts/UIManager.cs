@@ -27,7 +27,6 @@ public class UIManager : MonoBehaviour
     public Button archerButton;
     public Button barrackButton;
     public Button wizardButton;
-
     public Button upgradeButton;
     public Button sellButton;
 
@@ -55,7 +54,6 @@ public class UIManager : MonoBehaviour
         }
 
         UpdateGoldText(GoldManager.Instance.gold);
-
         archerButton.onClick.AddListener(OnArcherButtonClick);
         barrackButton.onClick.AddListener(OnBarrackButtonClick);
         wizardButton.onClick.AddListener(OnWizardButtonClick);
