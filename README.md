@@ -53,6 +53,7 @@ MadRush<br/><br/>
 <p>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/7fd676f6-1f3a-482b-bad0-3dedc249a1fe" height="32%" width="32%">
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/927de0cc-9bbc-4b33-9b74-f70c93d0f7b3" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/b50861d9-5da7-446c-8c11-ca1f268ed996" height="32%" width="32%">
 </p>
 <br/>
 
@@ -61,6 +62,7 @@ MadRush<br/><br/>
 - 궁수 타워는 비교적 낮은 공격력과 빠른 공격 속도를 가진 타워입니다.
 - 병영 타워에서는 두명의 아군 병사가 나와 적을 공격하며, 아군 병사는 주기적으로 리스폰 됩니다.
 - 마법사 타워는 속도가 느리지만 공격력이 강한 타워입니다.
+- 특정 맵에만 있는 포탄 타워는 쿨타임이 차면 원하는 위치에 포탄을 떨어뜨려 광범위 공격을 할 수 있습니다.
 
 #### 게임 방법
 
