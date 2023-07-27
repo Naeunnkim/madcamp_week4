@@ -51,5 +51,14 @@ MadRush<br/><br/>
 
 ### 게임 결과 화면
 
+<p>
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/870bb1f3-c6d3-4502-923c-22a09f6f5e53" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/51f48964-3244-48d8-ae42-2d9b9ec36462" height="32%" width="32%">
+</p>
+
+- 적의 이동을 2번 이상 못 막을 시 Game Over 페이지로 이동합니다.
+- 모든 wave의 공격을 무사히 막을 경우 You Win 페이지로 이동합니다.
+- 각각의 결과 화면에서는 retry 버튼을 눌러 같은 맵을 재시작 할 수 있으며, stage choice 버튼을 눌러 맵 선택 화면으로 돌아갈 수 있습니다.
+
 ### 기타 기능
 - audio manager script를 작성해 scene이 변경되어도 배경음악이 끊기지 않도록 구현했습니다.
