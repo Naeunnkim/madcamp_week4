@@ -66,9 +66,15 @@ MadRush<br/><br/>
 
 #### 게임 방법
 
+<p>
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/ffb8ad1e-bc1e-4d51-9019-07766a9266a6" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/79dd7338-d2ea-49d2-9a81-51a85428dc3c" height="32%" width="32%">
+</p>
+<br/>
+
 - 초기 화면에서 주어지는 골드로 타워를 설치할 수 있습니다.
 - 적을 죽일 때 마다 일정량의 골드가 들어오며, 타워를 업그레이드하거나 새로운 타워를 지을 수 있습니다.
-- 
+- 타워를 팔면 일정량의 골드가 반환됩니다.
 
 ### 게임 결과 화면
 
