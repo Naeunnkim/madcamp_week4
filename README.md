@@ -30,6 +30,7 @@ MadRush<br/><br/>
 
 <p>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/b9917974-32b6-413c-b8d1-d013193af7d7" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/e9bedb5c-10b5-4f62-894d-ca994853500f" height="32%" width="32%">
 </p>
 <br/>
 
