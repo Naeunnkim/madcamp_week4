@@ -45,7 +45,9 @@ MadRush<br/><br/>
   <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/5f1c9a8f-1b99-4b5c-ad5d-397b2f4107e3" height="32%" width="32%">
 </p>
 
-### 플레이 화면
+- 서로 다른 3개의 맵을 플레이 할 수 있도록 구성했습니다.
+
+### 타워 설명
 
 ### 게임 결과 화면
 
