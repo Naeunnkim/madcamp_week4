@@ -165,8 +165,8 @@ public class enemySpawnertest : MonoBehaviour
             else
                 enemy3.Setup(wayPointsRoute2);
 
-            yield return new WaitForSeconds(enemies[1].spawnTime);
-            timeElapsed += enemies[1].spawnTime;
+            yield return new WaitForSeconds(1f);
+            timeElapsed += 1f;
         }
     }
 

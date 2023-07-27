@@ -4288,7 +4288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - prefab: {fileID: 1087142861974899406, guid: 541fd9260c81e4389995239a9915be04, type: 3}
-    spawnTime: 3
+    spawnTime: 2
   - prefab: {fileID: 7618672627556791142, guid: 262a0a01fe4bf7844bec89cf45ad2155, type: 3}
     spawnTime: 3
   - prefab: {fileID: 2919076301492404631, guid: 190ad385f886e174c819d795f8ed63fe, type: 3}
