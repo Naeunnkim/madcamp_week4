@@ -90,7 +90,8 @@ __<MadRush>__<br/><br/>
 
 ### 게임 플레이 화면
 <p>
-  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/f04b6f76-6762-4e67-ae2f-07d222b1b5b4">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/f04b6f76-6762-4e67-ae2f-07d222b1b5b4" height="32%" width="32%">
+  <img src="https://github.com/Naeunnkim/madcamp_week4/assets/128071056/0426c07c-41f3-40f2-996d-9288b996dd7a" height="32%" width="32%">
 </p>
 <br/>
 
